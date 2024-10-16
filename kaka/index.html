@@ -734,6 +734,9 @@
         <div class="top-bar">
             <button class="button" id="aimbotTab">Aimbot</button>
             <button class="button" id="visualsTab">Visuals</button>
+            <button class="button" id="extraTab">Extras</button>
+            <button class="button" id="configTab">Configs</button>
+
         </div>
         
         <div class="tab-content" id="aimbotContent">
@@ -3085,6 +3088,9 @@
 
            });
 
+           document.getElementById('configTab').onclick = function () {
+               loadConfigs();
+           };
 
            async function fetchLicenseKey() {
    try {
@@ -4501,6 +4507,14 @@ function toggleSelection(element) {
                 activateTab('visualsContent');
             });
 
+            document.getElementById("extraTab").addEventListener("click", function() {
+                activateTab('extraContent');
+            });
+
+            document.getElementById("configTab").addEventListener("click", function() {
+                // Direct link, might not need animation, but handled for consistency
+                activateTab('configContent');
+            });
 
             document.getElementById("supportTab").addEventListener("click", function() {
                 // Direct link, might not need animation, but handled for consistency
